@@ -2,23 +2,19 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"net/http"
+
+	"github.com/edniltonms17/api-go-rest/models"
+	"github.com/edniltonms17/api-go-rest/routes"
 )
 
-const initialMesage string = "Iniciando nosso servidor Golang"
-const homepage string = "Home Page"
+const initialMesage string = "Starting our server Golang"
 
 func main() {
+	models.Personalities = []models.Personality{
+		{Name: "Nome 1", History: "Historia 1"},
+		{Name: "Nome 2", History: "Historia 2"},
+	}
+
 	fmt.Println(initialMesage)
-	handleRequest()
-}
-
-func home(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, homepage)
-}
-
-func handleRequest() {
-	http.HandleFunc("/", home)
-	log.Fatal(http.ListenAndServe(":8000", nil))
+	routes.HandleRequest()
 }
