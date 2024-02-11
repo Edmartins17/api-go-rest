@@ -1,7 +1,8 @@
 package models
 
-type Personality struct{
-	Name string `json:name`
+type Personality struct {
+	Id      int    `jdon:if`
+	Name    string `json:name`
 	History string `json:history`
 }
 

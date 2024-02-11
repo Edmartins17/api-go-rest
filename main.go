@@ -11,8 +11,9 @@ const initialMesage string = "Starting our server Golang"
 
 func main() {
 	models.Personalities = []models.Personality{
-		{Name: "Nome 1", History: "Historia 1"},
-		{Name: "Nome 2", History: "Historia 2"},
+		{Id: 1, Name: "Nome 1", History: "Historia 1"},
+		{Id: 2, Name: "Nome 2", History: "Historia 2"},
+		{Id: 3, Name: "Nome 3", History: "Historia 3"},
 	}
 
 	fmt.Println(initialMesage)
