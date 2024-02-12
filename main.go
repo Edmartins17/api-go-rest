@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/edniltonms17/api-go-rest/database"
 	"github.com/edniltonms17/api-go-rest/models"
 	"github.com/edniltonms17/api-go-rest/routes"
 )
@@ -16,6 +17,7 @@ func main() {
 		{Id: 3, Name: "Nome 3", History: "Historia 3"},
 	}
 
+	database.DataBaseConnection()
 	fmt.Println(initialMesage)
 	routes.HandleRequest()
 }
