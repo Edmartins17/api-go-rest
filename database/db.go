@@ -13,7 +13,8 @@ var (
 )
 
 func DataBaseConnection() {
-	stringConnection := "host=localhost user=root password=root dbname=root port=5432"
+	stringConnection := "host=localhost user=root password=root dbname=root port=5432 sslmode=disable"
+
 	DB, err = gorm.Open(postgres.Open(stringConnection))
 	if err != nil {
 		log.Panic("Error by trying connect database")
